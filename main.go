@@ -31,8 +31,9 @@ type Request struct {
 Process - a worker to transform an Order
 */
 func Process(index int, orders []Order, waitGroup *sync.WaitGroup) {
-	log.Printf("Processing order[%d]\t%s\n", index, orders[index].ID)
 	defer waitGroup.Done()
+
+	// log.Printf("Processing order[%d]\t%s\n", index, orders[index].ID)
 	orders[index].Data = strings.ToUpper(orders[index].Data)
 }
 

@@ -53,9 +53,9 @@
 ```
 
 ## How to test
-- Go tests:
+- Go tests (run unit tests without spawning the server):
     go test
-- Bash tests:
+- Bash tests (spawn server and test valid request):
     ./RUNME.sh
 
 ## How to run
@@ -64,3 +64,4 @@ go run main.go
 ## Some Notes
 - I changed the output format because the given format wasn't valid JSON.
 - Using channels wasn't required as each goroutine edited the Order objects in-memory, lowering system requirements.
+- There were no specifications about how to handle data validation errors.
